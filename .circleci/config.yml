@@ -24,11 +24,14 @@ defaults: &defaults
 # Main
 version: 2
 jobs:
-  newsflash-git:
+  whirlpool-gui-appimage:
+    <<: *defaults
+  bisq-bin:
     <<: *defaults
 
 workflows:
   version: 2
   build:
     jobs:
-      - newsflash-git
+      - whirlpool-gui-appimage
+      - bisq-bin
