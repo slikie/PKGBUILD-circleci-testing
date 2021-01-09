@@ -10,6 +10,17 @@ defaults: &defaults
         name: Build package
         command: yay --useask -S --noconfirm ${CIRCLE_JOB}
 
+    - store_artifacts:
+        path: ./.cache/yay/${CIRCLE_JOB}/*.tar.zst
+        destination: artifact-file
+    - store_artifacts:
+        path: ./.cache/yay/${CIRCLE_JOB}/*.tar.*
+        destination: artifact-file2
+    - store_artifacts:
+        path: ./.cache/yay/${CIRCLE_JOB}
+        destination: artifact-file3
+
+
 # Main
 version: 2
 jobs:
