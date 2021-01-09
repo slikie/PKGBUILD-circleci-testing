@@ -11,11 +11,14 @@ defaults: &defaults
         command: yay --useask -S --noconfirm ${CIRCLE_JOB}
 
     - store_artifacts:
-        path: ../.cache/yay/*/*.tar.*
+        path: ../.cache/yay/${CIRCLE_JOB}/*.tar.zst
         destination: artifact-file2
     - store_artifacts:
         path: ../.cache/yay/
         destination: artifact-file3
+    - store_artifacts:
+        path: ../.cache/yay/${CIRCLE_JOB}
+        destination: artifact-file5
 
 
 # Main
