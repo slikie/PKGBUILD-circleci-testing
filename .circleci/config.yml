@@ -13,92 +13,14 @@ defaults: &defaults
 # Main
 version: 2
 jobs:
-  joinmarket-qt-git:
-    <<: *defaults
-  python-jmdaemon-git:
-    <<: *defaults
-  python-jmclient-git:
-    <<: *defaults
-  python-jmbitcoin-git:
-    <<: *defaults
-  python-jmbase-git:
-    <<: *defaults
-  python-chromalog:
-    <<: *defaults
-  mwc-qt-wallet-bin:
-    <<: *defaults
-  losslesscut-bin:
-    <<: *defaults
   whirlpool-gui-appimage:
     <<: *defaults
-  bisq:
-    <<: *defaults
   bisq-bin:
-    <<: *defaults
-  lnd:
-    <<: *defaults
-  zap-desktop-appimage:
-    <<: *defaults
-  zap-desktop-git:
-    <<: *defaults
-  pybitmessage-git:
-    <<: *defaults
-  lando:
-    <<: *defaults
-  lando-git:
-    <<: *defaults
-  check_smartmon-git:
-    <<: *defaults
-  python2-simple-crypt:
-    <<: *defaults
-  mo-git:
-    <<: *defaults
-  list-all-systemd-timers-git:
-    <<: *defaults
-  decompose-git:
-    <<: *defaults
-  coinbin-git:
-    <<: *defaults
-  check_zfs-git:
-    <<: *defaults
-  check_pacman-git:
-    <<: *defaults
-  bitaddress-git:
-    <<: *defaults
-  bip39tool-git:
-    <<: *defaults
-  python-bitcointx:
     <<: *defaults
 
 workflows:
   version: 2
   build:
     jobs:
-      - joinmarket-qt-git
-      - python-jmdaemon-git
-      - python-jmclient-git
-      - python-jmbitcoin-git
-      - python-jmbase-git
-      - python-chromalog
-      - mwc-qt-wallet-bin
-      - losslesscut-bin
       - whirlpool-gui-appimage
-      - bip39tool-git
-      - bitaddress-git
-      - check_pacman-git
-      - check_zfs-git
-      - bisq
       - bisq-bin
-      - lnd
-      - zap-desktop-appimage
-      - zap-desktop-git
-      - pybitmessage-git
-      - lando
-      - lando-git
-      - check_smartmon-git
-      - python2-simple-crypt
-      - mo-git
-      - list-all-systemd-timers-git
-      - decompose-git
-      - coinbin-git
-      - python-bitcointx
