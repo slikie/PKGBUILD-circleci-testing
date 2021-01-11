@@ -26,9 +26,12 @@ version: 2
 jobs:
   newsflash-git:
     <<: *defaults
+  liferea-git:
+    <<: *defaults
 
 workflows:
   version: 2
   build:
     jobs:
       - newsflash-git
+      - liferea-git
