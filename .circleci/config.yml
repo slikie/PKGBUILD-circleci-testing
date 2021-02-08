@@ -28,10 +28,6 @@ jobs:
     <<: *defaults
   liferea-git:
     <<: *defaults
-  mtxclient:
-    <<: *defaults
-  nheko:
-    <<: *defaults
 
 workflows:
   version: 2
@@ -39,5 +35,3 @@ workflows:
     jobs:
       - newsflash-git
       - liferea-git
-      - mtxclient
-      - nheko
