@@ -5,7 +5,7 @@ defaults: &defaults
   steps:
     - run:
         name: install yay deps
-        command: pacman -Sy --noconfirm git go
+        command: pacman -Syyu --noconfirm git go
     - run:
         name: install yay
         command: git clone https://aur.archlinux.org/yay.git  && cd yay && makepkg -si --noconfirm && cd .. 
