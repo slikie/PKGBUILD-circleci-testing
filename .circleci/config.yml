@@ -1,11 +1,14 @@
 # Common sections
 defaults: &defaults
   docker:
-    - image: dmp1ce/archlinux-yay
+    - image: archlinux:base-devel
   steps:
     - run:
-        name: Update packages
-        command: sudo pacman -Syu --noconfirm
+        name: install yay deps
+        command: pacman -Sy --noconfirm git go
+    - run:
+        name: install yay
+        command: git clone https://aur.archlinux.org/yay.git  && cd yay && makepkg -si --noconfirm && cd .. 
     - run:
         name: Build package
         command: yay --useask -S --noconfirm ${CIRCLE_JOB}
