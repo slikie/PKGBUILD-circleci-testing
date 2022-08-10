@@ -14,7 +14,7 @@ defaults: &defaults
         command:  aur-install ${CIRCLE_JOB}
 
     - store_artifacts:
-        path: ../.cache/yay/${CIRCLE_JOB}/*.tar.zst
+        path: /var/cache/foreign-pkg/*.tar.zst
         destination: artifact-file2
     - store_artifacts:
         path: ../.cache/yay/
@@ -22,6 +22,9 @@ defaults: &defaults
     - store_artifacts:
         path: ../.cache/yay/${CIRCLE_JOB}
         destination: artifact-file5
+    - store_artifacts:
+        path: /var/cache/foreign-pkg/${CIRCLE_JOB}*.tar.zst
+        destination: artifact-file6
 
 
 # Main
