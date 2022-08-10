@@ -3,12 +3,15 @@ defaults: &defaults
   docker:
     - image: greyltc/archlinux-aur:yay
   steps:
+ #   - run:
+ #       name: Update packages
+ #       command: sudo pacman -Syu --noconfirm
+ #   - run:
+ #       name: Build package
+ #       command: yay --useask -S --noconfirm ${CIRCLE_JOB}
     - run:
-        name: Update packages
-        command: sudo pacman -Syu --noconfirm
-    - run:
-        name: Build package
-        command: yay --useask -S --noconfirm ${CIRCLE_JOB}
+        name: install with command
+        command:  aur-install ${CIRCLE_JOB}
 
     - store_artifacts:
         path: ../.cache/yay/${CIRCLE_JOB}/*.tar.zst
