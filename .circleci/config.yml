@@ -17,7 +17,7 @@ defaults: &defaults
         path: /var/cache/foreign-pkg/*.tar.zst
         destination: artifact-file2
     - store_artifacts:
-        path: ../.cache/yay/
+        path: /var/cache/foreign-pkg/
         destination: artifact-file3
     - store_artifacts:
         path: ../.cache/yay/${CIRCLE_JOB}
